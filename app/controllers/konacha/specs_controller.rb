@@ -5,6 +5,7 @@ module Konacha
     end
 
     def warm_cache
+      puts 'warming asset cache'
       @warm_cache_file = Konacha::Engine.config.konacha.warm_cache_file
       @stylesheets = Konacha::Engine.config.konacha.stylesheets
     end
