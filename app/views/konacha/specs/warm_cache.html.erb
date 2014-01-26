@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+    <title>Konacha Warm Asset Cache</title>
+    <% @stylesheets.each do |file| %>
+      <%# Use :debug => false for stylesheets to improve page load performance. %>
+      <%= stylesheet_link_tag file, :debug => false %>
+    <% end %>
+
+    <%= javascript_include_tag "mocha", "chai", :debug => false %>
+    <script type="text/javascript">
+      mocha.suite.emit('pre-require', window, null, this);
+    </script>
+    <%= javascript_include_tag @warm_cache_file %>
+  </head>
+  <body> </body>
+</html>

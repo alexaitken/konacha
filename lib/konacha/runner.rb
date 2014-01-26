@@ -15,6 +15,8 @@ module Konacha
     end
 
     def run(path = '/')
+      session.visit '/warm_cache' unless Konacha.config.warm_cache_file.blank?
+
       session.visit path
 
       events_consumed = 0

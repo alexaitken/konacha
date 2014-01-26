@@ -42,6 +42,7 @@ module Konacha
       options.verbose      ||= false
       options.runner_port  ||= nil
       options.formatters   ||= self.class.formatters
+      options.warm_cache_file ||= nil
 
       app.config.assets.paths << app.root.join(options.spec_dir).to_s
     end
